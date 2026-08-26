@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nana- todo list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+<h2 class="todo-title">
+    TO-DO LIST
+</h2>
+            <div class="todo-card">
+                    <div class="app-header">
+<div class="setlist-title">
+
+    <h1>
+        TODAY'S<br>
+        SETLIST
+    </h1>
+
+    <img src="images(to-do)/glass.png" alt="glass">
+
+</div>
+<p class="date" id="currentDate"></p>
+<div class="progress-section">
+
+    <div class="progress-label">
+        <span>PROGRESS</span>
+        <span id="progressText">0%</span>
+    </div>
+
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill">
+            <img src="images(to-do)/strawberry.png" alt="Strawberry">
+        </div>
+    </div>
+    <div class="task-input">
+    <input type="text" id="taskInput" placeholder="Write a task.✦ ݁˖">
+    <button id="addTask">+</button>
+</div>
+
+<div class="task-list" id="taskList">
+
+</div>
+</div>
+    </div>
+            </div>
+
+<div class="reward-ticket locked" id="rewardTicket">
+
+    <div class="ticket-content">
+        <p class="ticket-label">TRAPNEST</p>
+
+        <h3>LIVE IN TOKYO</h3>
+
+        <p class="ticket-status" id="ticketStatus">
+            🔒 COMPLETE YOUR SETLIST
+        </p>
+    </div>
+
+    <div class="ticket-number">
+        707
+    </div>
+
+</div>            
+        </div>
+
+<script src="script.js"></script>        
+</body>
+</html>

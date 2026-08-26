@@ -1,0 +1,452 @@
+* {
+    box-sizing: border-box;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(180, 40, 80, 0.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 75%,
+            rgba(180, 40, 80, 0.08),
+            transparent 35%
+        );
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background-color: #171417;
+    color: #f2e7e9;
+
+    font-family: Arial, sans-serif;
+
+    background-image:
+        radial-gradient(
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            rgba(180, 50, 80, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 5px 5px, 8px 8px;
+}
+
+
+/* MAIN CONTAINER */
+
+.container {
+    position: relative;
+
+    width: min(90%, 700px);
+
+    margin: 120px auto 60px;
+}
+
+
+/* TO-DO TITLE */
+
+.todo-title {
+    position: absolute;
+
+    top: -65px;
+    left: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 2px;
+
+    color: #f0dfe4;
+
+    z-index: 2;
+}
+
+
+/* MAIN CARD */
+
+.todo-card {
+    position: relative;
+
+    min-height: 600px;
+
+    padding: 55px 50px;
+
+    background: #eee4e7;
+
+    color: #171417;
+
+    border: 10px solid #cdbdc2;
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 0 6px #eee4e7,
+        0 0 0 8px #171417,
+        10px 10px 0 rgba(0, 0, 0, 0.35);
+
+}
+/* HEADER */
+
+.app-header {
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #171417;
+}
+.setlist-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 25px;
+}
+
+.setlist-title h1 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 52px;
+    line-height: 0.9;
+    letter-spacing: -2px;
+    white-space: nowrap;
+}
+
+.setlist-title img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.small-title {
+    margin: 0 0 8px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 5px;
+}
+
+
+.date {
+    margin: 22px 0 0;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+.progress-section {
+    margin-top: 35px;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.progress-bar {
+    position: relative;
+
+    width: 100%;
+    height: 12px;
+
+    background: #d5c5ca;
+
+    border: 1px solid #171417;
+}
+
+.progress-fill {
+    position: relative;
+
+    width: 0%;
+    height: 100%;
+
+    background: #8f3048;
+    transition: width 0.3s ease;
+}
+
+.progress-fill img {
+    position: absolute;
+
+    width: 38px;
+    height: 38px;
+
+    object-fit: contain;
+
+    right: -19px;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+.task-input {
+    display: flex;
+    align-items: center;
+
+    margin-top: 35px;
+
+    border-bottom: 2px solid #171417;
+}
+
+.task-input input {
+    flex: 1;
+
+    padding: 12px 5px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    color: #171417;
+}
+
+.task-input input::placeholder {
+    color: #8b777d;
+    font-style: italic;
+}
+
+.task-input button {
+    width: 38px;
+    height: 38px;
+
+    border: 2px solid #171417;
+    border-radius: 50%;
+
+    background: #8f3048;
+    color: #eee4e7;
+
+    font-size: 25px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.task-input button:hover {
+    transform: rotate(90deg);
+    background: #171417;
+}
+
+.task-list {
+    margin-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 5px;
+
+    border-bottom: 1px dashed #9d8a90;
+}
+
+.task label {
+    flex: 1;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+
+/* CUSTOM CHECKBOX */
+
+.task input[type="checkbox"] {
+    appearance: none;
+
+    width: 20px;
+    height: 20px;
+
+    border: 2px solid #171417;
+
+    cursor: pointer;
+
+    position: relative;
+}
+
+.task input[type="checkbox"]:checked {
+    background: #8f3048;
+}
+
+.task input[type="checkbox"]:checked::after {
+    content: "✓";
+
+    position: absolute;
+
+    left: 3px;
+    top: -2px;
+
+    color: #eee4e7;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* COMPLETED TASK */
+
+.task input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.edit-button,
+.delete-button {
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 9px;
+    letter-spacing: 1px;
+
+    color: #171417;
+}
+
+.edit-button:hover {
+    text-decoration: underline;
+}
+
+.delete-button {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.delete-button:hover {
+    color: #8f3048;
+}
+
+.reward-ticket {
+    display: flex;
+
+    width: 100%;
+    min-height: 145px;
+
+    margin-top: 40px;
+
+    background: #d8c5ca;
+
+    border: 2px solid #171417;
+
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+
+/* LOCKED STATE */
+
+.reward-ticket.locked {
+    opacity: 0.45;
+    filter: grayscale(1);
+}
+
+
+/* UNLOCKED STATE */
+
+.reward-ticket:not(.locked) {
+    opacity: 1;
+    filter: none;
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        7px 7px 0 rgba(0, 0, 0, 0.25);
+}
+
+
+/* MAIN TICKET AREA */
+
+.ticket-content {
+    flex: 1;
+
+    padding: 22px 25px;
+}
+
+
+/* TRAPNEST */
+
+.ticket-label {
+    margin: 0 0 5px;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    letter-spacing: 5px;
+}
+
+
+/* LIVE IN TOKYO */
+
+.ticket-content h3 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 27px;
+    letter-spacing: 1px;
+}
+
+
+/* STATUS */
+
+.ticket-status {
+    margin: 18px 0 0;
+
+    font-size: 9px;
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* TICKET NUMBER */
+
+.ticket-number {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+
+    border-left: 2px dashed #171417;
+
+    writing-mode: vertical-rl;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
