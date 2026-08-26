@@ -22,4 +22,4 @@ A NANA-inspired interactive to-do list web application built with HTML, CSS and 
 
 ## Live Demo
 
-[View the live project](YOUR-GITHUB-PAGES-LINK)
+[View the live project](https://alizaykashif-dev.github.io/nana-to-do-list/)
