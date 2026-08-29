@@ -1,6 +1,6 @@
-# NANA To-Do List
+# To-Do List
 
-A NANA-inspired interactive to-do list web application built with HTML, CSS and JavaScript.
+An interactive to-do list web application built with HTML, CSS and JavaScript.
 
 ## Features
 
